@@ -5,9 +5,11 @@ public class Room {
     private Room right;
     private Room left;
     final private String name;
+    final private Treasure treasure;
 
     public Room(String name) {
         this.name = name;
+        this.treasure = new Treasure();
     }
 
 
@@ -29,5 +31,9 @@ public class Room {
 
     public String getName() {
         return name;
+    }
+
+    public Treasure getTreasure() {
+        return treasure;
     }
 }

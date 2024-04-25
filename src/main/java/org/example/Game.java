@@ -8,7 +8,7 @@ public class Game {
     private int steps;
 
     public Game(Character player) {
-        this.currentRoom= new Room("start");
+        this.currentRoom= new Room("Entrance");
         this.player = player;
         this.steps = 0;
         Policies.seperator();
@@ -42,6 +42,10 @@ public class Game {
 
 
     }
+    private void search(){
+        System.out.println("searching...");
+        System.out.println(currentRoom.getTreasure().open(player));
+    }
 
     public void  feedback(String type){
         Policies.seperator();
@@ -54,6 +58,9 @@ public class Game {
                 break;
             case "help":
                 System.out.println("future manual guide.");
+                break;
+            case "search":
+                search();
                 break;
             default:
                 System.out.println(type+" is an unknown type of command");
