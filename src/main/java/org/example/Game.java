@@ -8,9 +8,12 @@ public class Game {
     private int steps;
 
     public Game(Character player) {
-        this.currentRoom= new Room();
+        this.currentRoom= new Room("start");
         this.player = player;
         this.steps = 0;
+        Policies.seperator();
+        currentLocation();
+        Policies.seperator();
     }
 
 
@@ -29,16 +32,22 @@ public class Game {
     }
 
     public void  createRoom(){
-        currentRoom.setLeft(new Room());
-        currentRoom.setRight(new Room());
+        currentRoom.setLeft(new Room(Policies.roomNamePolicy(steps)));
+        currentRoom.setRight(new Room(Policies.roomNamePolicy(steps)));
+
+    }
+
+    private void currentLocation(){;
+        System.out.println("location: "+currentRoom.getName());
+
 
     }
 
     public void  feedback(String type){
-
+        Policies.seperator();
         switch (type){
             case "move":
-                System.out.println(player.getName()+" steps: "+steps);
+                currentLocation();
                 break;
             case "status":
                 System.out.println(player.toString());
@@ -46,8 +55,10 @@ public class Game {
             case "help":
                 System.out.println("future manual guide.");
                 break;
+            default:
+                System.out.println(type+" is an unknown type of command");
         }
-
+        Policies.seperator();
     }
 
     public Character getPlayer() {

@@ -4,8 +4,10 @@ public class Room {
 
     private Room right;
     private Room left;
+    final private String name;
 
-    public Room() {
+    public Room(String name) {
+        this.name = name;
     }
 
 
@@ -25,4 +27,7 @@ public class Room {
         this.right = right;
     }
 
+    public String getName() {
+        return name;
+    }
 }

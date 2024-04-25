@@ -27,7 +27,7 @@ public class Character {
     @Override
     public String toString(){
         return "name: "+name+"\n"
-                + "HP: "+Hp+"\n";
+                + "HP: "+Hp;
 
     }
 }

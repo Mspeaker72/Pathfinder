@@ -16,16 +16,23 @@ public class Main {
 
             if (command.isEmpty()){
                 Policies.nullPolicy();
+                continue;
             }
             if(Policies.movementCommand(command)){
                 test.createRoom();
                 test.walk(command);
                 test.feedback("move");
                 dummy= test.getPlayer();
+                continue;
+
             } else if (Policies.utility(command)) {
                 test.feedback(command);
+                continue;
             }
             Policies.gameOver(dummy);
+            test.feedback(command);
+
+
 
 
 

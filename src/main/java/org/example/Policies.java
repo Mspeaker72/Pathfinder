@@ -24,5 +24,14 @@ public class Policies {
 
     }
 
+    public static String roomNamePolicy(int step){
+        int startConstant =1;
+        return "Room-" + (step+startConstant);
+    }
+
+    public static void seperator(){
+        System.out.println("*******************************************************************************");
+    }
+
 
 }
